@@ -6,6 +6,7 @@ Makefile
 nginx.conf
 jhldy
 bin
-downloads
+downloads/*
+!downloads/app-release.apk
 *.md
 .DS_Store

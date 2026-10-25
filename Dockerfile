@@ -13,6 +13,7 @@ COPY --from=builder /out/jhldy /app/jhldy
 COPY config.json /app/config.json
 COPY web /app/web
 COPY templates /app/templates
+COPY downloads/app-release.apk /app/downloads/app-release.apk
 ENV JH_LDY_ROOT=/app
 EXPOSE 5175
 HEALTHCHECK --interval=15s --timeout=3s --retries=3 \

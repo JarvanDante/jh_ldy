@@ -1,6 +1,6 @@
 :root {
-  --primary: #ff5c93;
-  --primary-deep: #f0568f;
+  --primary: #7b3fa8;
+  --primary-deep: #552583;
   --bg: #0b0b0d;
   --surface: #1c1c22;
   --text: #f2f2f5;
@@ -40,7 +40,7 @@ body {
   height: 88px;
   margin: 0 auto 20px;
   border-radius: 24px;
-  background: linear-gradient(160deg, var(--primary), #9b2d55);
+  background: linear-gradient(160deg, var(--primary), #552583);
   color: #fff;
   font-size: 28px;
   font-weight: 800;
@@ -48,7 +48,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 12px 32px rgba(255, 92, 147, 0.28);
+  box-shadow: 0 12px 32px rgba(85, 37, 131, 0.35);
 }
 
 h1 {
@@ -97,7 +97,7 @@ h1 {
 .btn.ghost {
   background: transparent;
   color: var(--primary);
-  border: 1px solid rgba(255, 92, 147, 0.45);
+  border: 1px solid rgba(123, 63, 168, 0.45);
 }
 
 .btn:active {

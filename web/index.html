@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="theme-color" content="#0b0b0d" id="themeColor" />
+    <title>下载</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/skins/default/app.css" id="skinCss" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div class="logo" id="logo">JH</div>
+        <h1 id="siteName">JH</h1>
+        <p class="slogan" id="slogan">打开 App，马上开始</p>
+      </header>
+
+      <main class="actions">
+        <button class="btn android" type="button" id="btnAndroid">下载安卓版</button>
+        <button class="btn ios" type="button" id="btnIos">下载 iOS 版</button>
+      </main>
+
+      <p class="hint" id="hint">下载后打开 App，渠道会自动归属，不会带到分享邀请里。</p>
+    </div>
+
+    <div class="mask" id="browserMask" hidden>
+      <div class="mask-card">
+        <p>请点右上角 <strong>···</strong></p>
+        <p>选择「在浏览器中打开」后再下载</p>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" hidden></div>
+
+    <script src="/js/source.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

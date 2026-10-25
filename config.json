@@ -1,0 +1,20 @@
+{
+  "listen": ":5175",
+  "site_name": "JH",
+  "slogan": "打开 App，马上开始",
+  "logo_text": "JH",
+  "h5_url": "https://jh-h5.panalow.cc/",
+  "default_skin": "default",
+  "android_url": "/download/android.apk",
+  "ios_url": "",
+  "ios_org": "app.jh.webclip",
+  "ios_clip_url": "https://jh-h5.panalow.cc/",
+  "channels": {
+    "JHAAA": {
+      "android_url": "",
+      "skin": "light",
+      "ios_url": "",
+      "ios_clip_url": ""
+    }
+  }
+}

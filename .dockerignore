@@ -1,0 +1,11 @@
+.git
+.idea
+.vscode
+README.md
+Makefile
+nginx.conf
+jhldy
+bin
+downloads
+*.md
+.DS_Store

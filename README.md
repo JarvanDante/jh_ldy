@@ -45,7 +45,7 @@ make run
 
 ## 集群
 
-镜像给 Docker Desktop 的 Kubernetes 用，只部署在 `jh-prod`。`jh-ldy.panalow.cc` 由 ingress-nginx 转到 Service `jh-ldy:80`。
+镜像给 Docker Desktop 的 Kubernetes 用。`jh-test` 1 个副本，`jh-prod` 2 个副本。`jh-ldy.panalow.cc` 由 ingress-nginx 转到生产 Service `jh-ldy:80`。
 
 ```bash
 make docker-build

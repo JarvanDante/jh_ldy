@@ -2,12 +2,67 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jh-ldy
+  namespace: jh-test
+  labels:
+    app: jh-ldy
+    env: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jh-ldy
+  template:
+    metadata:
+      labels:
+        app: jh-ldy
+        env: test
+    spec:
+      containers:
+        - name: jh-ldy
+          image: jh_ldy:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 5175
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 3
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jh-ldy
+  namespace: jh-test
+  labels:
+    app: jh-ldy
+    env: test
+spec:
+  selector:
+    app: jh-ldy
+  ports:
+    - name: http
+      port: 80
+      targetPort: http
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jh-ldy
   namespace: jh-prod
   labels:
     app: jh-ldy
     env: prod
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: jh-ldy

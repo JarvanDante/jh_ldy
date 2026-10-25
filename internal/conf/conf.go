@@ -121,7 +121,7 @@ func (c *Config) Resolve(source, skinRoot string) Page {
 		}
 	}
 	p.Skin = safeSkin(p.Skin, c.DefaultSkin, skinRoot)
-	p.SkinCSS = "/skins/" + p.Skin + "/app.css"
+	p.SkinCSS = "/skins/" + p.Skin + "/app.css?v=20261026"
 	if p.Skin == "light" {
 		p.ThemeColor = "#f6f2fa"
 	} else {

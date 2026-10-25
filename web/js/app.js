@@ -6,7 +6,7 @@
     ios_url: "",
     h5_url: "",
     logo_text: "JH",
-    skin_css: "/skins/default/app.css",
+    skin_css: "/skins/default/app.css?v=20261026",
     theme_color: "#0b0b0d",
   };
   var source = "";

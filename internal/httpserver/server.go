@@ -71,7 +71,7 @@ func (s *Server) pageFor(code string) conf.Page {
 	page.Clipboard = source.Clipboard(code)
 	page.H5URL = iosclip.StampURL(page.H5URL, code)
 	if strings.TrimSpace(page.AndroidURL) == "" {
-		page.AndroidURL = "/download/android.apk"
+		page.AndroidURL = "/download/android.apk?v=3"
 	}
 	if strings.TrimSpace(page.IOSURL) == "" {
 		iosPath := "/download/ios.mobileconfig"
@@ -90,6 +90,7 @@ func (s *Server) androidApk(w http.ResponseWriter, r *http.Request) {
 	}
 	w.Header().Set("Content-Type", "application/vnd.android.package-archive")
 	w.Header().Set("Content-Disposition", `attachment; filename="jh.apk"`)
+	w.Header().Set("Cache-Control", "no-cache")
 	http.ServeFile(w, r, s.apkPath)
 }
 

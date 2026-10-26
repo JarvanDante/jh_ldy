@@ -2,11 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ConsentText</key>
-	<dict>
-		<key>default</key>
-		<string>请点击右上角「下一步」。安装后仅在桌面增加一个入口，不会改系统设置。</string>
-	</dict>
 	<key>PayloadContent</key>
 	<array>
 		<dict>
@@ -21,9 +16,9 @@
 			<key>Label</key>
 			<string>{$systemName}</string>
 			<key>PayloadDescription</key>
-			<string>配置 Web Clip 设置</string>
+			<string>主屏幕图标</string>
 			<key>PayloadDisplayName</key>
-			<string>Web Clip</string>
+			<string>{$systemName}</string>
 			<key>PayloadIdentifier</key>
 			<string>{$orgName}.clip</string>
 			<key>PayloadType</key>
@@ -39,13 +34,11 @@
 		</dict>
 	</array>
 	<key>PayloadDescription</key>
-	<string>{$systemName} 入口：{$systemShortUrl}</string>
+	<string>安装后会在主屏幕添加「{$systemName}」图标，点开即可使用。不会修改系统设置，可在「设置 - 通用 - VPN 与设备管理」中删除。</string>
 	<key>PayloadDisplayName</key>
 	<string>{$systemName}</string>
 	<key>PayloadIdentifier</key>
 	<string>{$orgName}</string>
-	<key>PayloadOrganization</key>
-	<string>{$systemName}</string>
 	<key>PayloadRemovalDisallowed</key>
 	<false/>
 	<key>PayloadType</key>

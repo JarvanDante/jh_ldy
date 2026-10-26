@@ -114,7 +114,7 @@ func (s *Server) iosConfig(w http.ResponseWriter, r *http.Request) {
 	} else {
 		clip = iosclip.StampURL(clip, code)
 	}
-	body, err := iosclip.Build(s.tplPath, s.cfg.SiteName, s.cfg.IOSOrg, clip, r.Host)
+	body, err := iosclip.Build(s.tplPath, s.cfg.SiteName, s.cfg.IOSOrg, clip)
 	if err != nil {
 		http.Error(w, "ios template missing", http.StatusInternalServerError)
 		return

@@ -15,7 +15,7 @@ import (
 	"strings"
 )
 
-func Build(templatePath, siteName, org, clipURL, host string) (string, error) {
+func Build(templatePath, siteName, org, clipURL string) (string, error) {
 	raw, err := os.ReadFile(templatePath)
 	if err != nil {
 		return "", err
@@ -28,20 +28,15 @@ func Build(templatePath, siteName, org, clipURL, host string) (string, error) {
 	if siteName == "" {
 		siteName = "JH"
 	}
-	short := host
-	if u, e := url.Parse(clipURL); e == nil && u.Host != "" {
-		short = u.Host
-	}
 	icon := loadIcon(templatePath)
 	out := string(raw)
 	repl := map[string]string{
-		"{$logo}":           base64.StdEncoding.EncodeToString(icon),
-		"{$systemName}":     xmlEscape(siteName),
-		"{$orgName}":        xmlEscape(org),
-		"{$id}":             id,
-		"{$clipId}":         clipID,
-		"{$ios_url}":        xmlEscape(clipURL),
-		"{$systemShortUrl}": xmlEscape(short),
+		"{$logo}":       base64.StdEncoding.EncodeToString(icon),
+		"{$systemName}": xmlEscape(siteName),
+		"{$orgName}":    xmlEscape(org),
+		"{$id}":         id,
+		"{$clipId}":     clipID,
+		"{$ios_url}":    xmlEscape(clipURL),
 	}
 	for k, v := range repl {
 		out = strings.ReplaceAll(out, k, v)
